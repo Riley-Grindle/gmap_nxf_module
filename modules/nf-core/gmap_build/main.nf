@@ -14,7 +14,7 @@ process GMAP_BUILD {
 
 
     output:
-    tuple val(meta), path("${meta.id}/"), emit: index
+    tuple val(meta), path("${meta.id}"), emit: index
     path "versions.yml"           , emit: versions
 
     when:
@@ -23,15 +23,21 @@ process GMAP_BUILD {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
-    if (genome_fasta.endsWith('.gz')){
+    if (genome_fasta.toString().endsWith('.gz')){
         args = args + "-g"
     }
     """
-    gmap_build -d ${meta.id} \\
+    WORK_DIR=\$(pwd)
+    sed -i.bak 's|with_gmapdb=/path/to/gmapdb|with_gmapdb=\${WORK_DIR}|' /usr/src/app/gmap-2024-11-20/config.site
+    
+    /usr/src/app/gmap-2024-11-20/configure
+    make
+    make check
+    make install
+
+    gmap_build -d $prefix \\
     $args \\
     $genome_fasta
-
-    mv /gmap_dbs/${meta.id} .
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

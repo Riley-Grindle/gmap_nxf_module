@@ -23,14 +23,16 @@ process GMAP {
 
     script:
     def args = task.ext.args ?: ''
-    if (transcripts_fa.endsWith(".gz")){
+    if (transcripts_fa.toString().endsWith(".gz")){
         input_cdna = "<(gunzip -c $transcripts_fa)"
     }
     """
-    mv $gmap_db /gmap_dbs/
-    db=\$(basename $gmap_db)
+    /usr/src/app/gmap-2024-11-20/configure
+    make
+    make check
+    make install
     
-    gmapl -d \$db \\
+    gmapl -d ${meta.id} \\
     $args \\
     -t $task.cpus \\
     $input_cdna > "${meta2.id}-map.${meta.id}"
