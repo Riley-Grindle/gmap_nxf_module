@@ -39,6 +39,8 @@ process GMAP_BUILD {
     $args \\
     $genome_fasta
 
+    mv /usr/local/share/$prefix .
+
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         gmapgsnap: \$(gmap --version |& sed '1!d ; s/gmap //')
@@ -46,9 +48,6 @@ process GMAP_BUILD {
     """
 
     stub:
-    def args = task.ext.args ?: ''
-    def prefix = task.ext.prefix ?: "${meta.id}"
-
     """
     touch $genome_fasta
 

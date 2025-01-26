@@ -15,7 +15,7 @@ process GMAP {
 
 
     output:
-    tuple val(meta), path("${meta.id2}"), emit: map_file
+    tuple val(meta), path("${meta2.id}-map.${meta.id}"), emit: map_file
     path "versions.yml"           , emit: versions
 
     when:
@@ -25,6 +25,8 @@ process GMAP {
     def args = task.ext.args ?: ''
     if (transcripts_fa.toString().endsWith(".gz")){
         input_cdna = "<(gunzip -c $transcripts_fa)"
+    } else {
+        input_cdna = "$transcripts_fa"
     }
     """
     /usr/src/app/gmap-2024-11-20/configure
@@ -32,6 +34,8 @@ process GMAP {
     make check
     make install
     
+    mv $gmap_db /usr/local/share/
+
     gmapl -d ${meta.id} \\
     $args \\
     -t $task.cpus \\
