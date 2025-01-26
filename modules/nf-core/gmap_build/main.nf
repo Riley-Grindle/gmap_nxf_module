@@ -36,6 +36,7 @@ process GMAP_BUILD {
     make install
 
     gmap_build -d $prefix \\
+    -t $task.cpus \\
     $args \\
     $genome_fasta
 
