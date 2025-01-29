@@ -3,11 +3,10 @@ process GMAP {
     tag "$meta.id"
     label 'process_medium'
 
-
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/python:3.9--1':
-        'mdiblbiocore/gmap:latest' }"
+        'docker.io/mdiblbiocore/gmap:latest' }"
 
     input:
     tuple val(meta), path(gmap_db)
@@ -15,7 +14,7 @@ process GMAP {
 
 
     output:
-    tuple val(meta), path("${meta2.id}-map.${meta.id}"), emit: map_file
+    tuple val(meta), path("${meta2.id}-map.${meta.id}.gtf"), emit: map_file
     path "versions.yml"           , emit: versions
 
     when:
@@ -29,17 +28,13 @@ process GMAP {
         input_cdna = "$transcripts_fa"
     }
     """
-    /usr/src/app/gmap-2024-11-20/configure
-    make
-    make check
-    make install
-    
     mv $gmap_db /usr/local/share/
 
-    gmapl -d ${meta.id} \\
+    gmap -d ${meta.id} \\
     $args \\
     -t $task.cpus \\
-    $input_cdna > "${meta2.id}-map.${meta.id}"
+    -f gff3_gene \\
+    $input_cdna > "${meta2.id}-map.${meta.id}.gtf"
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

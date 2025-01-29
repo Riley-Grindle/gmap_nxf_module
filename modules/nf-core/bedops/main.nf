@@ -1,49 +1,37 @@
 
-process GMAP_BUILD {
+process GTF2BED {
     tag "$meta.id"
     label 'process_medium'
-
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/python:3.9--1':
-        'docker.io/mdiblbiocore/gmap:latest' }"
+        'quay.io/biocontainers/bedops:2.4.40--h9f5acd7_0' }"
 
     input:
-    tuple val(meta), path(genome_fasta)
-
+    tuple val(meta), path(gtf)
 
     output:
-    tuple val(meta), path("${meta.id}"), emit: index
+    tuple val(meta), path("${meta.id}.bed"), emit: bed_file
     path "versions.yml"           , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
 
     script:
-    def args = task.ext.args ?: ''
-    def prefix = task.ext.prefix ?: "${meta.id}"
-    if (genome_fasta.toString().endsWith('.gz')){
-        args = args + "-g"
-    }
     """
 
-    gmap_build -d $prefix \\
-    -t $task.cpus \\
-    $args \\
-    $genome_fasta
-
-    mv /usr/local/share/$prefix .
+    gtf2bed < $gtf > ${meta.id}.bed
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        gmapgsnap: \$(gmap --version |& sed '1!d ; s/gmap //')
+        gmapgsnap: \$(gtf2bed --version |& sed '1!d ; s/gtf2bed //')
     END_VERSIONS
     """
 
     stub:
     """
-    touch $genome_fasta
+    touch $gtf
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
