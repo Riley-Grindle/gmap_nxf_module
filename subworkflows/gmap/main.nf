@@ -1,5 +1,6 @@
 include { GMAP_BUILD        } from '../../modules/nf-core/gmap_build/main'
 include { GMAP              } from '../../modules/nf-core/gmap/main'
+include { GMAP_L            } from '../../modules/nf-core/gmap_l/main'
 include { GTF2BED as GTF2BED_QUERY } from '../../modules/nf-core/bedops/main'
 include { GTF2BED as GTF2BED_REF } from '../../modules/nf-core/bedops/main'
 include { BEDTOOLS_INTERSECT } from '../../modules/nf-core/bedtools/main'
@@ -16,11 +17,22 @@ workflow GMAP_GENOME {
     GMAP_BUILD(
         genome_fasta
     )
-
-    GMAP(
-        GMAP_BUILD.out.index,
-        transcripts_fa
-    )
+    // check size of genome fasta if it is larger than 2 billion bytes, then use use GMAP_L instead of GMAP
+    genome_fasta
+        .map { meta, file -> [meta, file, file.size()] } 
+        .subscribe { meta, file, size ->
+            if (size > 2e9) {
+                GMAP_L(
+                    GMAP_BUILD.out.index, 
+                    transcripts_fa
+                )
+            } else {
+                GMAP(
+                    GMAP_BUILD.out.index, 
+                    transcripts_fa
+                )
+            }
+        }
 
     GTF2BED_QUERY(
         GMAP.out.map_file
