@@ -9,12 +9,12 @@ process GMAP_L {
         'docker.io/mdiblbiocore/gmap:latest' }"
 
     input:
-    tuple val(meta), path(gmap_db)
+    tuple val(meta), path(gmap_db) // , val(size)
     tuple val(meta2), path(transcripts_fa)
 
 
     output:
-    tuple val(meta), path("${meta2.id}-map.${meta.id}.gtf"), emit: map_file
+    tuple val(meta2), path("${meta2.id}-map.${meta.id}.gtf"), emit: map_file
     path "versions.yml"           , emit: versions
 
     when:

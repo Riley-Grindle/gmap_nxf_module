@@ -1,0 +1,872 @@
+Feb-05 20:07:27.865 [main] DEBUG nextflow.cli.Launcher - $> nextflow run subworkflows/gmap/main.nf -c mmc.config -profile docker
+Feb-05 20:07:28.060 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.4
+Feb-05 20:07:28.091 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/mnt/jfs/nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.3,nf-tower@1.9.3,nf-wave@1.7.4
+Feb-05 20:07:28.138 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Feb-05 20:07:28.142 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Feb-05 20:07:28.149 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Feb-05 20:07:28.170 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Feb-05 20:07:28.214 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/nextflow.config
+Feb-05 20:07:28.222 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /mnt/jfs/nextflow/gmap_nxf_module/mmc.config
+Feb-05 20:07:28.225 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/nextflow.config
+Feb-05 20:07:28.227 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/jfs/nextflow/gmap_nxf_module/mmc.config
+Feb-05 20:07:28.279 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /mnt/jfs/nextflow/secrets/store.json
+Feb-05 20:07:28.287 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@5bdaf2ce] - activable => nextflow.secret.LocalSecretsProvider@5bdaf2ce
+Feb-05 20:07:28.299 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Feb-05 20:07:29.411 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Feb-05 20:07:29.641 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [gitpod, debug, shifter, mamba, charliecloud, apptainer, conda, singularity, arm, docker, podman]
+Feb-05 20:07:29.722 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Feb-05 20:07:29.748 [main] DEBUG nextflow.cli.CmdRun - Launching `subworkflows/gmap/main.nf` [modest_nobel] DSL2 - revision: 44e17cffb7
+Feb-05 20:07:29.752 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-float]
+Feb-05 20:07:29.754 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Feb-05 20:07:29.758 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-float, nf-tower@1.9.3]
+Feb-05 20:07:29.760 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-float version: latest
+Feb-05 20:07:30.331 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-float@0.4.6' resolved
+Feb-05 20:07:30.332 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-float@0.4.6'
+Feb-05 20:07:30.341 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-float@0.4.6
+Feb-05 20:07:30.342 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-tower version: 1.9.3
+Feb-05 20:07:30.370 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-tower@1.9.3' resolved
+Feb-05 20:07:30.370 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-tower@1.9.3'
+Feb-05 20:07:30.397 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-tower@1.9.3
+Feb-05 20:07:30.518 [main] DEBUG nextflow.Session - Session UUID: 3141d71f-7a9c-4d8b-81d3-147f5a213aad
+Feb-05 20:07:30.519 [main] DEBUG nextflow.Session - Run name: modest_nobel
+Feb-05 20:07:30.520 [main] DEBUG nextflow.Session - Executor pool size: 4
+Feb-05 20:07:30.552 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Feb-05 20:07:30.566 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-05 20:07:30.577 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/nextflow.config
+Feb-05 20:07:30.579 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /mnt/jfs/nextflow/gmap_nxf_module/mmc.config
+Feb-05 20:07:30.580 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/nextflow.config
+Feb-05 20:07:30.581 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/jfs/nextflow/gmap_nxf_module/mmc.config
+Feb-05 20:07:30.585 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Feb-05 20:07:30.782 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Feb-05 20:07:30.874 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [gitpod, debug, shifter, mamba, charliecloud, apptainer, conda, singularity, arm, docker, podman]
+Feb-05 20:07:30.941 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.4 build 5934
+  Created: 20-01-2025 16:47 UTC (16:47 GMT)
+  System: Linux 5.14.0-427.13.1.el9_4.x86_64
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 17.0.14+7-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 59559@ip-10-192-10-145.ec2.internal [10.192.10.145]
+  CPUs: 4 - Mem: 15.2 GB (11.2 GB) - Swap: 5 GB (5 GB)
+Feb-05 20:07:31.050 [main] DEBUG nextflow.Session - Work-dir: /mnt/jfs/nextflow [fuseblk]
+Feb-05 20:07:31.052 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/bin
+Feb-05 20:07:31.117 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[FloatGridExecutor]
+Feb-05 20:07:31.140 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Feb-05 20:07:31.146 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Feb-05 20:07:31.235 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Feb-05 20:07:31.254 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Feb-05 20:07:31.509 [main] DEBUG nextflow.Session - Session start
+Feb-05 20:07:31.518 [main] DEBUG io.seqera.tower.plugin.TowerClient - Creating Seqera Platform observer -- endpoint=https://api.cloud.seqera.io; requestInterval=1s; aliveInterval=1m; maxRetries=5; backOffBase=3; backOffDelay=250
+Feb-05 20:07:32.328 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Feb-05 20:07:33.589 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GMAP_BUILD` matches process GMAP_GENOME:GMAP_BUILD
+Feb-05 20:07:33.620 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: float
+Feb-05 20:07:33.621 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'float'
+Feb-05 20:07:33.703 [main] DEBUG nextflow.executor.Executor - [warm up] executor > float
+Feb-05 20:07:33.717 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'float' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Feb-05 20:07:33.722 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: float)
+Feb-05 20:07:33.728 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'float' > queue-stat-interval: 1m
+Feb-05 20:07:33.829 [main] INFO  com.memverge.nextflow.FloatBin - [FLOAT] found float binary in /opt/memverge/bin
+Feb-05 20:07:34.085 [main] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] sync the float binary, exit code: 0, out: The float binary is already synced up with opcenter
+
+Feb-05 20:07:34.222 [main] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] set secret AWS_ACCESS_KEY_ID_MODEST-NOBEL, exit code: 0, out: Set AWS_ACCESS_KEY_ID_MODEST-NOBEL successfully
+
+Feb-05 20:07:34.369 [main] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] set secret AWS_SECRET_ACCESS_KEY_MODEST-NOBEL, exit code: 0, out: Set AWS_SECRET_ACCESS_KEY_MODEST-NOBEL successfully
+
+Feb-05 20:07:34.480 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GMAP_L` matches process GMAP_GENOME:GMAP_L
+Feb-05 20:07:34.517 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: float
+Feb-05 20:07:34.518 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'float'
+Feb-05 20:07:34.585 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GTF2BED` matches process GMAP_GENOME:GTF2BED_QUERY
+Feb-05 20:07:34.593 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: float
+Feb-05 20:07:34.636 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'float'
+Feb-05 20:07:34.656 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GTF2BED` matches process GMAP_GENOME:GTF2BED_REF
+Feb-05 20:07:34.667 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: float
+Feb-05 20:07:34.667 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'float'
+Feb-05 20:07:34.695 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:BEDTOOLS_INTERSECT` matches process GMAP_GENOME:BEDTOOLS_INTERSECT
+Feb-05 20:07:34.706 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: float
+Feb-05 20:07:34.706 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'float'
+Feb-05 20:07:34.714 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: BEDTOOLS_INTERSECT, GTF2BED_REF, GMAP_L, GMAP_GENOME:GMAP_L, GMAP_GENOME:GMAP_BUILD, GMAP_GENOME:GTF2BED_QUERY, GMAP_GENOME:BEDTOOLS_INTERSECT, GMAP, GMAP_GENOME:GTF2BED_REF, GTF2BED_QUERY, GTF2BED, GMAP_BUILD
+Feb-05 20:07:35.050 [main] INFO  io.seqera.tower.plugin.TowerClient - Monitor the execution with Seqera Platform using this URL: https://cloud.seqera.io/orgs/MDIBL-Biocore/workspaces/Memverge/watch/5B4hAw8IOEb63d
+Feb-05 20:07:35.054 [main] DEBUG nextflow.Session - Igniting dataflow network (8)
+Feb-05 20:07:35.057 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GMAP_GENOME:GMAP_BUILD
+Feb-05 20:07:35.059 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GMAP_GENOME:GMAP_L
+Feb-05 20:07:35.060 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GMAP_GENOME:GTF2BED_QUERY
+Feb-05 20:07:35.062 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GMAP_GENOME:GTF2BED_REF
+Feb-05 20:07:35.063 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GMAP_GENOME:BEDTOOLS_INTERSECT
+Feb-05 20:07:35.067 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_b40083130e4c78e5: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/../../modules/nf-core/bedtools/main.nf
+  Script_e20d3c908a9fc4d3: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/../../modules/nf-core/bedops/main.nf
+  Script_616c8ce708306080: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/main.nf
+  Script_be5a2b19950f1744: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/../../modules/nf-core/gmap_l/main.nf
+  Script_eb7695fa9ff131ec: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/../../modules/nf-core/gmap_build/main.nf
+  Script_2c4ac3f70e1d9541: /mnt/jfs/nextflow/gmap_nxf_module/subworkflows/gmap/../../modules/nf-core/gmap/main.nf
+Feb-05 20:07:35.067 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Feb-05 20:07:35.067 [main] DEBUG nextflow.Session - Session await
+Feb-05 20:07:35.170 [Actor Thread 5] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 2.9.2
+Feb-05 20:07:35.186 [Actor Thread 5] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@2.9.2' resolved
+Feb-05 20:07:35.187 [Actor Thread 5] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@2.9.2'
+Feb-05 20:07:35.224 [Actor Thread 5] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@2.9.2
+Feb-05 20:07:35.251 [Actor Thread 5] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Feb-05 20:07:35.252 [Actor Thread 5] DEBUG nextflow.file.FileHelper - Started plugin 'nf-amazon' required to handle file: s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.gtf
+Feb-05 20:07:35.295 [Actor Thread 5] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+Feb-05 20:07:35.328 [Actor Thread 5] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_connections=20, connection_timeout=300000, max_error_retry=5}
+Feb-05 20:07:36.754 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.fna to work dir: /mnt/jfs/nextflow/stage-3141d71f-7a9c-4d8b-81d3-147f5a213aad/6d/0200380f2b0e4f23df7f8d692b564a/GCF_040938575.1_UKY_AmexF1_1_genomic.fna
+Feb-05 20:07:36.758 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.gtf to work dir: /mnt/jfs/nextflow/stage-3141d71f-7a9c-4d8b-81d3-147f5a213aad/b4/1727509d01644a336103a158786b91/GCF_040938575.1_UKY_AmexF1_1_genomic.gtf
+Feb-05 20:07:36.794 [FileTransfer-2] DEBUG n.cloud.aws.nio.S3FileSystemProvider - S3 download file from=s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.gtf to=/mnt/jfs/nextflow/stage-3141d71f-7a9c-4d8b-81d3-147f5a213aad/b4/1727509d01644a336103a158786b91/GCF_040938575.1_UKY_AmexF1_1_genomic.gtf
+Feb-05 20:07:36.794 [FileTransfer-2] DEBUG nextflow.cloud.aws.nio.S3Client - Creating S3 transfer manager pool - chunk-size=104857600; max-treads=10;
+Feb-05 20:07:36.804 [FileTransfer-2] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'S3TransferManager' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-05 20:07:36.873 [FileTransfer-1] DEBUG n.cloud.aws.nio.S3FileSystemProvider - S3 download file from=s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.fna to=/mnt/jfs/nextflow/stage-3141d71f-7a9c-4d8b-81d3-147f5a213aad/6d/0200380f2b0e4f23df7f8d692b564a/GCF_040938575.1_UKY_AmexF1_1_genomic.fna
+Feb-05 20:07:38.756 [Actor Thread 3] INFO  nextflow.file.FilePorter - Staging foreign file: s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.fna
+Feb-05 20:07:38.756 [Actor Thread 5] INFO  nextflow.file.FilePorter - Staging foreign file: s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.gtf
+Feb-05 20:08:46.065 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] switch task 1 to /mnt/jfs/nextflow/60/5502d5696c8e5dd2c78bd91a5d6f1f
+Feb-05 20:08:46.070 [Task submitter] INFO  com.memverge.nextflow.FloatJobs - [FLOAT] FloatJobs created with task prefix modest-nobel
+Feb-05 20:08:46.230 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - got container image of the task quay.io/biocontainers/bedops:2.4.40--h9f5acd7_0
+Feb-05 20:08:46.261 [Task submitter] WARN  com.memverge.nextflow.FloatConf - local work directory need nfs support
+Feb-05 20:08:46.319 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] volumes to mount for 1: 
+Feb-05 20:08:46.366 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] submit job: /opt/memverge/bin/float -a 34.228.189.178 -u rseaman -p *** submit --image quay.io/biocontainers/bedops:2.4.40--h9f5acd7_0 --cpu 16:64 --mem 128:512 --job /mnt/jfs/nextflow/60/5502d5696c8e5dd2c78bd91a5d6f1f/.command.run --disableRerun --customTag nf-job-id:modest-nobel-1 --customTag nextflow-io-session-id:uuid-3141d71f-7a9c-4d8b-81d3-147f5a213aad --customTag nextflow-io-task-name:GMAP-GENOME-GTF2BED-REF--UKY-AmexF1-1- --customTag input-size:622364182 --customTag nextflow-io-process-name:GMAP-GENOME-GTF2BED-REF --customTag job-kind:file-GMAP-GENOME-GTF2BED-REF --customTag nextflow-io-project-name:main-nf --customTag nextflow-io-run-name:modest-nobel
+Feb-05 20:08:50.826 [Task submitter] INFO  com.memverge.nextflow.FloatJobs - [FLOAT] put job modest-nobel-1 in status tracking map
+Feb-05 20:08:50.830 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [FLOAT] submitted process GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1) > jobId: o08eigkje9tqz5349b9fs; workDir: /mnt/jfs/nextflow/60/5502d5696c8e5dd2c78bd91a5d6f1f
+Feb-05 20:08:50.831 [Task submitter] INFO  nextflow.Session - [60/5502d5] Submitted process > GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)
+Feb-05 20:08:56.105 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:01.333 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:07.655 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:12.409 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:15.241 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:23.360 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:26.558 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:30.308 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:35.566 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:40.340 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:49.382 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:51.096 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:09:56.944 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:01.082 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:09.197 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:13.500 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:17.332 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:22.085 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:25.712 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:31.088 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:36.475 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:42.172 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:48.087 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:51.880 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:10:56.985 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:02.373 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:06.637 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:12.707 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:16.728 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:23.638 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:27.667 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:32.265 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:38.681 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:40.990 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:48.596 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: PENDING
+Feb-05 20:11:51.426 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: RUNNING
+Feb-05 20:11:57.448 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: RUNNING
+Feb-05 20:12:01.066 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: RUNNING
+Feb-05 20:12:11.712 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 1, nf-job-id: modest-nobel-1, float-job-id: o08eigkje9tqz5349b9fs, float status: ERROR
+Feb-05 20:12:13.582 [Task monitor] INFO  com.memverge.nextflow.FloatJobs - [FLOAT] job modest-nobel-1 already finished, no need to update
+Feb-05 20:12:14.846 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: o08eigkje9tqz5349b9fs; id: 1; name: GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1); status: COMPLETED; exit: 1; error: -; workDir: /mnt/jfs/nextflow/60/5502d5696c8e5dd2c78bd91a5d6f1f started: -; exited: -; ]
+Feb-05 20:12:14.848 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-05 20:12:14.886 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1); work-dir=/mnt/jfs/nextflow/60/5502d5696c8e5dd2c78bd91a5d6f1f
+  error [nextflow.exception.ProcessFailedException]: Process `GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)` terminated with an error exit status (1)
+Feb-05 20:12:14.920 [TaskFinalizer-1] INFO  nextflow.processor.TaskProcessor - [60/5502d5] NOTE: Process `GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)` terminated with an error exit status (1) -- Execution is retried (1)
+Feb-05 20:12:14.968 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] switch task 3 to /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71
+Feb-05 20:12:15.112 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - got container image of the task quay.io/biocontainers/bedops:2.4.40--h9f5acd7_0
+Feb-05 20:12:15.114 [Task submitter] WARN  com.memverge.nextflow.FloatConf - local work directory need nfs support
+Feb-05 20:12:15.119 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] volumes to mount for 3: 
+Feb-05 20:12:15.122 [Task submitter] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] submit job: /opt/memverge/bin/float -a 34.228.189.178 -u rseaman -p *** submit --image quay.io/biocontainers/bedops:2.4.40--h9f5acd7_0 --cpu 16:64 --mem 128:512 --job /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.run --disableRerun --customTag nf-job-id:modest-nobel-3 --customTag nextflow-io-session-id:uuid-3141d71f-7a9c-4d8b-81d3-147f5a213aad --customTag nextflow-io-task-name:GMAP-GENOME-GTF2BED-REF--UKY-AmexF1-1- --customTag input-size:622364182 --customTag nextflow-io-process-name:GMAP-GENOME-GTF2BED-REF --customTag job-kind:file-GMAP-GENOME-GTF2BED-REF --customTag nextflow-io-project-name:main-nf --customTag nextflow-io-run-name:modest-nobel --vmPolicy [onDemand=true]
+Feb-05 20:12:18.626 [Task submitter] INFO  com.memverge.nextflow.FloatJobs - [FLOAT] put job modest-nobel-3 in status tracking map
+Feb-05 20:12:18.626 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [FLOAT] submitted process GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1) > jobId: k0lyvnx11yu1dqhzz55pw; workDir: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71
+Feb-05 20:12:18.627 [Task submitter] INFO  nextflow.Session - [07/7b8c3f] Re-submitted process > GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)
+Feb-05 20:12:21.974 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:12:28.208 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:12:31.795 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:12:36.608 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:12:39.865 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor float > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: k0lyvnx11yu1dqhzz55pw; id: 3; name: GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71 started: -; exited: -; ]
+Feb-05 20:12:42.507 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:12:46.935 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:12:51.707 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:12:56.565 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:02.738 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:09.012 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:11.622 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:18.111 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:24.849 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:26.775 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:33.064 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:38.891 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:41.304 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:49.299 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:52.071 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:13:58.818 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:03.727 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:07.731 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:14.290 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:17.236 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:22.084 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:26.745 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:31.288 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:36.949 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:43.083 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:47.947 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:56.947 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:14:59.675 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: PENDING
+Feb-05 20:15:03.427 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: RUNNING
+Feb-05 20:15:11.072 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: RUNNING
+Feb-05 20:15:14.301 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: RUNNING
+Feb-05 20:15:21.261 [Task monitor] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] task id: 3, nf-job-id: modest-nobel-3, float-job-id: k0lyvnx11yu1dqhzz55pw, float status: ERROR
+Feb-05 20:15:24.711 [Task monitor] INFO  com.memverge.nextflow.FloatJobs - [FLOAT] job modest-nobel-3 already finished, no need to update
+Feb-05 20:15:26.242 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: k0lyvnx11yu1dqhzz55pw; id: 3; name: GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1); status: COMPLETED; exit: 1; error: -; workDir: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71 started: -; exited: -; ]
+Feb-05 20:15:26.245 [TaskFinalizer-2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1); work-dir=/mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71
+  error [nextflow.exception.ProcessFailedException]: Process `GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)` terminated with an error exit status (1)
+Feb-05 20:15:26.268 [TaskFinalizer-2] DEBUG nextflow.processor.TaskRun - Unable to dump output of process 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)' -- Cause: java.nio.file.NoSuchFileException: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.out
+Feb-05 20:15:26.270 [TaskFinalizer-2] DEBUG nextflow.processor.TaskRun - Unable to dump error of process 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)' -- Cause: java.nio.file.NoSuchFileException: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.err
+Feb-05 20:15:26.278 [TaskFinalizer-2] DEBUG nextflow.processor.TaskRun - Unable to dump error of process 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)' -- Cause: java.nio.file.NoSuchFileException: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.log
+Feb-05 20:15:26.285 [TaskFinalizer-2] ERROR nextflow.processor.TaskProcessor - Error executing process > 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)'
+
+Caused by:
+  Process `GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)` terminated with an error exit status (1)
+
+
+Command executed:
+
+  gtf2bed < GCF_040938575.1_UKY_AmexF1_1_genomic.gtf > UKY_AmexF1_1.bed
+  
+  cat <<-END_VERSIONS > versions.yml
+  "GMAP_GENOME:GTF2BED_REF":
+      gmapgsnap: $(gtf2bed --version |& sed '1!d ; s/gtf2bed //')
+  END_VERSIONS
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Work dir:
+  /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71
+
+Container:
+  quay.io/biocontainers/bedops:2.4.40--h9f5acd7_0
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+Feb-05 20:15:26.296 [TaskFinalizer-2] DEBUG nextflow.Session - Session aborted -- Cause: Process `GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)` terminated with an error exit status (1)
+Feb-05 20:15:26.381 [TaskFinalizer-2] DEBUG nextflow.Session - The following nodes are still active:
+[process] GMAP_GENOME:GMAP_BUILD
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] GMAP_GENOME:GMAP_L
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] GMAP_GENOME:GTF2BED_QUERY
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Feb-05 20:15:26.388 [TaskFinalizer-2] DEBUG nextflow.Session - 
+Thread[S3TransferManager-5,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[pool-2-thread-1,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+  java.base@17.0.14/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-3,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-6,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Common-Cleaner,8,InnocuousThreadGroup]
+  java.base@17.0.14/java.lang.Object.wait(Native Method)
+  java.base@17.0.14/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+  java.base@17.0.14/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+  java.base@17.0.14/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)
+
+Thread[Actor Thread 2,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue$TransferStack$SNode.block(SynchronousQueue.java:288)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:397)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue.take(SynchronousQueue.java:886)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[main,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+  app//nextflow.util.Barrier$_awaitCompletion_closure3.doCall(Barrier.groovy:92)
+  app//nextflow.util.Barrier$_awaitCompletion_closure3.call(Barrier.groovy)
+  app//nextflow.extension.Bolts.withLock(Bolts.groovy:337)
+  app//nextflow.extension.Bolts.withLock(Bolts.groovy)
+  app//nextflow.util.Barrier.awaitCompletion(Barrier.groovy:89)
+  app//nextflow.Session.await(Session.groovy:676)
+  app//nextflow.script.ScriptRunner.await(ScriptRunner.groovy:256)
+  app//nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:144)
+  app//nextflow.cli.CmdRun.run(CmdRun.groovy:376)
+  app//nextflow.cli.Launcher.run(Launcher.groovy:503)
+  app//nextflow.cli.Launcher.main(Launcher.groovy:658)
+
+Thread[java-sdk-http-connection-reaper,5,main]
+  java.base@17.0.14/java.lang.Thread.sleep(Native Method)
+  com.amazonaws.http.IdleConnectionReaper.run(IdleConnectionReaper.java:188)
+
+Thread[Actor Thread 4,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue$TransferStack$SNode.block(SynchronousQueue.java:288)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:397)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue.take(SynchronousQueue.java:886)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-4,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Finalizer,8,system]
+  java.base@17.0.14/java.lang.Object.wait(Native Method)
+  java.base@17.0.14/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+  java.base@17.0.14/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+  java.base@17.0.14/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:172)
+
+Thread[process reaper,10,system]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Task monitor,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1764)
+  app//nextflow.processor.TaskPollingMonitor$_await_closure5.doCall(TaskPollingMonitor.groovy:529)
+  app//nextflow.processor.TaskPollingMonitor$_await_closure5.call(TaskPollingMonitor.groovy)
+  app//nextflow.extension.Bolts.withLock(Bolts.groovy:337)
+  app//nextflow.extension.Bolts.withLock(Bolts.groovy)
+  app//nextflow.processor.TaskPollingMonitor.await(TaskPollingMonitor.groovy:528)
+  app//nextflow.processor.TaskPollingMonitor.pollLoop(TaskPollingMonitor.groovy:453)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
+  app//org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+  app//groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+  app//org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+  app//org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+  app//org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+  app//nextflow.processor.TaskPollingMonitor$_start_closure2.doCall(TaskPollingMonitor.groovy:318)
+  app//nextflow.processor.TaskPollingMonitor$_start_closure2.call(TaskPollingMonitor.groovy)
+  app//groovy.lang.Closure.run(Closure.java:505)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Notification Thread,9,system]
+
+Thread[S3TransferManager-2,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Thread-1,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+  java.base@17.0.14/java.util.concurrent.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:515)
+  java.base@17.0.14/java.util.concurrent.LinkedBlockingDeque.poll(LinkedBlockingDeque.java:677)
+  app//nextflow.util.SimpleAgent.run(SimpleAgent.groovy:89)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
+  app//org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+  app//groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethodClosure(MetaClassImpl.java:1017)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1207)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+  app//groovy.lang.Closure.call(Closure.java:433)
+  app//groovy.lang.Closure.call(Closure.java:412)
+  app//groovy.lang.Closure.run(Closure.java:505)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[FileTransfer-2,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+  java.base@17.0.14/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[AnsiLogObserver,5,main]
+  java.base@17.0.14/java.lang.ProcessImpl.forkAndExec(Native Method)
+  java.base@17.0.14/java.lang.ProcessImpl.<init>(ProcessImpl.java:314)
+  java.base@17.0.14/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+  java.base@17.0.14/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+  java.base@17.0.14/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+  java.base@17.0.14/java.lang.Runtime.exec(Runtime.java:594)
+  java.base@17.0.14/java.lang.Runtime.exec(Runtime.java:453)
+  app//jline.internal.TerminalLineSettings.exec(TerminalLineSettings.java:183)
+  app//jline.internal.TerminalLineSettings.exec(TerminalLineSettings.java:173)
+  app//jline.internal.TerminalLineSettings.stty(TerminalLineSettings.java:168)
+  app//jline.internal.TerminalLineSettings.get(TerminalLineSettings.java:72)
+  app//jline.internal.TerminalLineSettings.getProperty(TerminalLineSettings.java:92)
+  app//jline.UnixTerminal.getWidth(UnixTerminal.java:77)
+  app//nextflow.trace.AnsiLogObserver.renderProcesses(AnsiLogObserver.groovy:257)
+  app//nextflow.trace.AnsiLogObserver.renderProgress(AnsiLogObserver.groovy:312)
+  app//nextflow.trace.AnsiLogObserver.render0(AnsiLogObserver.groovy:183)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
+  app//org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+  app//groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethodClosure(MetaClassImpl.java:1017)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1207)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+  app//groovy.lang.Closure.call(Closure.java:433)
+  app//groovy.lang.Closure.call(Closure.java:412)
+  app//groovy.lang.Closure.run(Closure.java:505)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-8,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-1,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[TaskFinalizer-1,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+  java.base@17.0.14/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Actor Thread 5,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue$TransferStack$SNode.block(SynchronousQueue.java:288)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:397)
+  java.base@17.0.14/java.util.concurrent.SynchronousQueue.take(SynchronousQueue.java:886)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[FileTransfer-1,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+  java.base@17.0.14/java.util.concurrent.FutureTask.awaitDone(FutureTask.java:447)
+  java.base@17.0.14/java.util.concurrent.FutureTask.get(FutureTask.java:190)
+  com.amazonaws.services.s3.transfer.internal.AbstractTransfer.waitForCompletion(AbstractTransfer.java:100)
+  nextflow.cloud.aws.nio.S3Client.downloadFile(S3Client.java:523)
+  nextflow.cloud.aws.nio.S3FileSystemProvider.download(S3FileSystemProvider.java:305)
+  app//nextflow.file.FileHelper.copyPath(FileHelper.groovy:995)
+  app//nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:364)
+  app//nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:328)
+  app//nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+  java.base@17.0.14/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Actor Thread 3,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+  java.base@17.0.14/java.util.concurrent.FutureTask.awaitDone(FutureTask.java:444)
+  java.base@17.0.14/java.util.concurrent.FutureTask.get(FutureTask.java:203)
+  app//nextflow.file.FilePorter.submitStagingActions(FilePorter.groovy:164)
+  app//nextflow.file.FilePorter.transfer(FilePorter.groovy:102)
+  java.base@17.0.14/java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(DirectMethodHandle$Holder)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b5452a400.invoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54105800.guardWithCatch(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54106000.reinvoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54106400.guard(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54106000.reinvoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54106400.guard(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54106000.reinvoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54169400.invoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b540b9000.invokeExact_MT(LambdaForm$MH)
+  app//org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$DMH/0x00007f0b540a6c00.invokeStatic(LambdaForm$DMH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b54105000.invoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.Invokers$Holder.linkToCallSite(Invokers$Holder)
+  app//nextflow.processor.TaskProcessor.makeTaskContextStage2(TaskProcessor.groovy:2183)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$DMH/0x00007f0b5453d000.invokeSpecial(LambdaForm$DMH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b5453e000.invoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d5800.guardWithCatch(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d6400.reinvoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d6800.guard(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d6400.reinvoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d6800.guard(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d6400.reinvoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b5453e400.invoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b540b9000.invokeExact_MT(LambdaForm$MH)
+  app//org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$DMH/0x00007f0b540a6c00.invokeStatic(LambdaForm$DMH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d3c00.invoke(LambdaForm$MH)
+  java.base@17.0.14/java.lang.invoke.LambdaForm$MH/0x00007f0b544d4000.linkToCallSite(LambdaForm$MH)
+  app//nextflow.processor.TaskProcessor.invokeTask(TaskProcessor.groovy:640)
+  app//nextflow.processor.InvokeTaskAdapter.call(InvokeTaskAdapter.groovy:52)
+  app//groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+  app//groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.access$001(ForkingDataflowOperatorActor.java:35)
+  app//groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor$1.run(ForkingDataflowOperatorActor.java:58)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-10,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Signal Dispatcher,9,system]
+
+Thread[TaskFinalizer-2,5,main]
+  java.base@17.0.14/java.lang.Thread.dumpThreads(Native Method)
+  java.base@17.0.14/java.lang.Thread.getAllStackTraces(Thread.java:1671)
+  app//nextflow.util.SysHelper.dumpThreads(SysHelper.groovy:188)
+  app//nextflow.Session.abort(Session.groovy:800)
+  app//nextflow.Session.fault(Session.groovy:766)
+  app//nextflow.processor.TaskPollingMonitor.finalizeTask(TaskPollingMonitor.groovy:695)
+  app//nextflow.processor.TaskPollingMonitor.safeFinalizeTask(TaskPollingMonitor.groovy:678)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
+  app//org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+  app//groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+  app//org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+  app//org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+  app//org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+  app//nextflow.processor.TaskPollingMonitor$_checkTaskStatus_lambda8.doCall(TaskPollingMonitor.groovy:668)
+  app//nextflow.processor.TaskPollingMonitor$$Lambda$527/0x00007f0b546f3640.run(Unknown Source)
+  java.base@17.0.14/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-9,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[S3TransferManager-7,5,main]
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+  java.base@17.0.14/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:62)
+  java.base@17.0.14/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+  java.base@17.0.14/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+  java.base@17.0.14/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:288)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:75)
+  com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable.call(DownloadS3ObjectCallable.java:36)
+  java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Tower-thread,5,main]
+  java.base@17.0.14/sun.nio.ch.SocketDispatcher.read0(Native Method)
+  java.base@17.0.14/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:47)
+  java.base@17.0.14/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:266)
+  java.base@17.0.14/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:317)
+  java.base@17.0.14/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+  java.base@17.0.14/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+  java.base@17.0.14/java.net.Socket$SocketInputStream.read(Socket.java:966)
+  java.base@17.0.14/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:484)
+  java.base@17.0.14/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:478)
+  java.base@17.0.14/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+  java.base@17.0.14/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+  java.base@17.0.14/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1510)
+  java.base@17.0.14/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1425)
+  java.base@17.0.14/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+  java.base@17.0.14/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+  java.base@17.0.14/sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:589)
+  java.base@17.0.14/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:187)
+  java.base@17.0.14/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1466)
+  java.base@17.0.14/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1437)
+  java.base@17.0.14/sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:220)
+  app//nextflow.util.SimpleHttpClient.sendHttpMessage(SimpleHttpClient.groovy:138)
+  app//nextflow.util.SimpleHttpClient.sendHttpMessage(SimpleHttpClient.groovy:100)
+  io.seqera.tower.plugin.TowerClient.sendHttpMessage(TowerClient.groovy:543)
+  io.seqera.tower.plugin.TowerClient.sendTasks0(TowerClient.groovy:834)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
+  app//org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+  app//groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethodClosure(MetaClassImpl.java:1017)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1207)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+  app//groovy.lang.Closure.call(Closure.java:433)
+  app//groovy.lang.Closure.call(Closure.java:412)
+  app//groovy.lang.Closure.run(Closure.java:505)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Task submitter,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+  java.base@17.0.14/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+  app//nextflow.processor.TaskPollingMonitor.awaitTasks(TaskPollingMonitor.groovy:388)
+  app//nextflow.processor.TaskPollingMonitor.submitLoop(TaskPollingMonitor.groovy:412)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
+  app//org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+  app//groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethodClosure(MetaClassImpl.java:1017)
+  app//groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1207)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+  app//groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+  app//groovy.lang.Closure.call(Closure.java:433)
+  app//groovy.lang.Closure.call(Closure.java:412)
+  app//groovy.lang.Closure.run(Closure.java:505)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Thread[Reference Handler,10,system]
+  java.base@17.0.14/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+  java.base@17.0.14/java.lang.ref.Reference.processPendingReferences(Reference.java:253)
+  java.base@17.0.14/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:215)
+
+Thread[HttpClient-1-SelectorManager,5,main]
+  java.base@17.0.14/sun.nio.ch.EPoll.wait(Native Method)
+  java.base@17.0.14/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:118)
+  java.base@17.0.14/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+  java.base@17.0.14/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+  platform/java.net.http@17.0.14/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:894)
+
+Thread[Actor Thread 1,5,main]
+  java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@17.0.14/java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:715)
+  java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1047)
+  java.base@17.0.14/java.util.concurrent.Semaphore.acquire(Semaphore.java:475)
+  app//groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.forwardPoisonPill(ForkingDataflowOperatorActor.java:69)
+  app//groovyx.gpars.dataflow.operator.DataflowProcessorActor.checkPoison(DataflowProcessorActor.java:114)
+  app//groovyx.gpars.dataflow.operator.DataflowOperatorActor.onMessage(DataflowOperatorActor.java:83)
+  app//groovyx.gpars.actor.impl.SDAClosure$1.call(SDAClosure.java:43)
+  app//groovyx.gpars.actor.AbstractLoopingActor.runEnhancedWithoutRepliesOnMessages(AbstractLoopingActor.java:293)
+  app//groovyx.gpars.actor.AbstractLoopingActor.access$400(AbstractLoopingActor.java:30)
+  app//groovyx.gpars.actor.AbstractLoopingActor$1.handleMessage(AbstractLoopingActor.java:93)
+  app//groovyx.gpars.util.AsyncMessagingCore.run(AsyncMessagingCore.java:132)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+  java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+  java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+
+Feb-05 20:15:26.391 [TaskFinalizer-2] DEBUG nextflow.processor.TaskRun - Unable to dump error of process 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)' -- Cause: java.nio.file.NoSuchFileException: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.err
+Feb-05 20:15:26.392 [TaskFinalizer-2] DEBUG nextflow.processor.TaskRun - Unable to dump output of process 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)' -- Cause: java.nio.file.NoSuchFileException: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.out
+Feb-05 20:15:26.393 [main] DEBUG nextflow.Session - Session await > all processes finished
+Feb-05 20:15:26.393 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: float) - terminating tasks monitor poll loop
+Feb-05 20:15:26.394 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Feb-05 20:15:26.396 [main] DEBUG nextflow.processor.TaskRun - Unable to dump error of process 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)' -- Cause: java.nio.file.NoSuchFileException: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.err
+Feb-05 20:15:26.396 [main] DEBUG nextflow.processor.TaskRun - Unable to dump output of process 'GMAP_GENOME:GTF2BED_REF (UKY_AmexF1_1)' -- Cause: java.nio.file.NoSuchFileException: /mnt/jfs/nextflow/07/7b8c3fd212ae3937fdbfb847979a71/.command.out
+Feb-05 20:15:26.398 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=GMAP_GENOME:GMAP_BUILD; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Feb-05 20:15:26.404 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=2; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=2; runningCount=-2; retriesCount=1; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=-32; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Feb-05 20:15:30.308 [main] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] delete secret AWS_ACCESS_KEY_ID_MODEST-NOBEL, exit code: 0, out: unset secret AWS_ACCESS_KEY_ID_MODEST-NOBEL successfully
+
+Feb-05 20:15:33.086 [main] INFO  c.m.nextflow.FloatGridExecutor - [FLOAT] delete secret AWS_SECRET_ACCESS_KEY_MODEST-NOBEL, exit code: 0, out: unset secret AWS_SECRET_ACCESS_KEY_MODEST-NOBEL successfully
+
+Feb-05 20:15:33.134 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Feb-05 20:15:33.367 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-amazon@2.9.2'
+Feb-05 20:15:33.699 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-amazon
+Feb-05 20:15:33.700 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-tower@1.9.3'
+Feb-05 20:15:33.700 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-tower
+Feb-05 20:15:36.099 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-float@0.4.6'
+Feb-05 20:15:36.099 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-float
+Feb-05 20:15:36.104 [FileTransfer-1] DEBUG nextflow.cloud.aws.nio.S3Client - S3 download file: s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.fna interrupted
+Feb-05 20:15:36.120 [Actor Thread 3] DEBUG nextflow.plugin.PluginsFacade - Using Default plugin manager
+Feb-05 20:15:36.141 [Actor Thread 3] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Feb-05 20:15:36.142 [Actor Thread 3] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Feb-05 20:15:36.146 [Actor Thread 3] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Feb-05 20:15:36.225 [Actor Thread 3] WARN  nextflow.processor.TaskProcessor - [GMAP_GENOME:GMAP_BUILD (1)] Unable to resume cached task -- See log file for details
+java.lang.NullPointerException: Cannot invoke "org.iq80.leveldb.impl.Version.retain()" because "this.version" is null
+	at org.iq80.leveldb.impl.SnapshotImpl.<init>(SnapshotImpl.java:35)
+	at org.iq80.leveldb.impl.DbImpl.getSnapshot(DbImpl.java:805)
+	at org.iq80.leveldb.impl.DbImpl.get(DbImpl.java:588)
+	at org.iq80.leveldb.impl.DbImpl.get(DbImpl.java:577)
+	at nextflow.cache.DefaultCacheStore.getEntry(DefaultCacheStore.groovy:177)
+	at nextflow.cache.CacheDB.getTaskEntry(CacheDB.groovy:82)
+	at nextflow.processor.TaskProcessor.checkCachedOrLaunchTask(TaskProcessor.groovy:807)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.selectMethod(IndyInterface.java:355)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskProcessor.invokeTask(TaskProcessor.groovy:655)
+	at nextflow.processor.InvokeTaskAdapter.call(InvokeTaskAdapter.groovy:52)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.access$001(ForkingDataflowOperatorActor.java:35)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor$1.run(ForkingDataflowOperatorActor.java:58)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Feb-05 20:15:36.333 [S3TransferManager-9] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:36.436 [S3TransferManager-4] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:36.523 [S3TransferManager-5] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:36.641 [S3TransferManager-3] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:36.696 [S3TransferManager-10] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:37.009 [S3TransferManager-7] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:37.148 [S3TransferManager-2] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:37.291 [S3TransferManager-6] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.
+Feb-05 20:15:37.374 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Feb-05 20:15:37.373 [S3TransferManager-8] WARN  c.a.s.s.i.S3AbortableInputStream - Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input stream after use.

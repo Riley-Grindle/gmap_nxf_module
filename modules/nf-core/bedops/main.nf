@@ -19,9 +19,14 @@ process GTF2BED {
     task.ext.when == null || task.ext.when
 
     script:
+    if (gtf.toString().endsWith(".gz")){
+        input_gtf = "<(gunzip -c $gtf)"
+    } else {
+        input_gtf = "$gtf"
+    }
     """
 
-    gtf2bed < $gtf > ${meta.id}.bed
+    gtf2bed < $input_gtf > ${meta.id}.bed
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

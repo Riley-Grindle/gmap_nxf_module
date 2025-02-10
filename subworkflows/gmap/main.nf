@@ -14,28 +14,50 @@ workflow GMAP_GENOME {
 
     main:
 
-    GMAP_BUILD(
+    if (!params.gmap_index){
+        
+        GMAP_BUILD(
+            genome_fasta
+        )
+        GMAP_L(
+            GMAP_BUILD.out.index, 
+            transcripts_fa
+        )
+
+    } else {
+
+        ch_index = Channel.of( [ [id: params.genome_name], params.gmap_index ] )
+
+        GMAP_L(
+            ch_index, 
+            transcripts_fa
+        )
+
+    }
+    /*
+    ch_genome_index = GMAP_BUILD(
         genome_fasta
     )
+    */
     // check size of genome fasta if it is larger than 2 billion bytes, then use use GMAP_L instead of GMAP
+
+    /*
     genome_fasta
-        .map { meta, file -> [meta, file, file.size()] } 
-        .subscribe { meta, file, size ->
-            if (size > 2e9) {
-                GMAP_L(
-                    GMAP_BUILD.out.index, 
-                    transcripts_fa
-                )
-            } else {
-                GMAP(
-                    GMAP_BUILD.out.index, 
-                    transcripts_fa
-                )
-            }
-        }
+        .map { meta, file -> [meta, file, file.size()] }
+    
+    ch_genome_index.mix(genome_fasta)
+    .groupTuple()
+    .set { sized_and_indexed_ch }
+
+    GMAP_L(
+        sized_and_indexed_ch.map { [ it[0], it[1], it[2] ]}, 
+        transcripts_fa
+    )
+
+    */
 
     GTF2BED_QUERY(
-        GMAP.out.map_file
+        GMAP_L.out.map_file
     )
 
     GTF2BED_REF(
