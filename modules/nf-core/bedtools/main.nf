@@ -45,7 +45,7 @@ process BEDTOOLS_INTERSECT {
         "$intervals2" == "${prefix}.${extension}")
         error "Input and output names are the same, use \"task.ext.prefix\" to disambiguate!"
     """
-    touch ${prefix}.${extension}
+    touch ${prefix}${extension}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

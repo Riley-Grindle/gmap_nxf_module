@@ -1,9 +1,9 @@
-include { GMAP_BUILD        } from '../../modules/nf-core/gmap_build/main'
-include { GMAP              } from '../../modules/nf-core/gmap/main'
-include { GMAP_L            } from '../../modules/nf-core/gmap_l/main'
+include { GUNZIP                   } from '../../modules/nf-core/gunzip/main'
+include { GMAP_BUILD               } from '../../modules/nf-core/gmap_build/main'
+include { GMAP                     } from '../../modules/nf-core/gmap/main'
 include { GTF2BED as GTF2BED_QUERY } from '../../modules/nf-core/bedops/main'
-include { GTF2BED as GTF2BED_REF } from '../../modules/nf-core/bedops/main'
-include { BEDTOOLS_INTERSECT } from '../../modules/nf-core/bedtools/main'
+include { GTF2BED as GTF2BED_REF   } from '../../modules/nf-core/bedops/main'
+include { BEDTOOLS_INTERSECT       } from '../../modules/nf-core/bedtools/main'
 
 workflow GMAP_GENOME {
     take:
@@ -16,48 +16,59 @@ workflow GMAP_GENOME {
 
     if (!params.gmap_index){
         
-        GMAP_BUILD(
-            genome_fasta
+        if (params.genome_fasta.endsWith(".gz")){
+            ch_genome_fasta = GUNZIP(
+                genome_fasta
+            ).gunzip
+        } else {
+            ch_genome_fasta = genome_fasta
+        }
+
+
+        ch_genome_index = GMAP_BUILD(
+            ch_genome_fasta
         )
-        GMAP_L(
-            GMAP_BUILD.out.index, 
+
+        ch_genome_index.index.mix(ch_genome_fasta)
+        .groupTuple()
+        .flatten()
+        .collect()
+        .set { ch_sized_and_indexed }
+        ch_sized_and_indexed.view()
+
+        GMAP(
+            ch_sized_and_indexed.map { [ it[0], it[1], it[2] ]}, 
             transcripts_fa
         )
 
     } else {
 
-        ch_index = Channel.of( [ [id: params.genome_name], params.gmap_index ] )
+        if (params.genome_fasta.endsWith(".gz")){
+            ch_genome_fasta = GUNZIP(
+                genome_fasta
+            ).gunzip
+        } else {
+            ch_genome_fasta = genome_fasta
+        }
 
-        GMAP_L(
-            ch_index, 
+        ch_genome_index = Channel.of( [ [id: params.genome_name], params.gmap_index ] )
+
+        ch_genome_index.mix(ch_genome_fasta)
+        .groupTuple()
+        .flatten()
+        .collect()
+        .set { ch_sized_and_indexed }
+        ch_sized_and_indexed.view()
+
+        GMAP(
+            ch_sized_and_indexed.map { [ it[0], it[1], it[2] ]}, 
             transcripts_fa
         )
 
     }
-    /*
-    ch_genome_index = GMAP_BUILD(
-        genome_fasta
-    )
-    */
-    // check size of genome fasta if it is larger than 2 billion bytes, then use use GMAP_L instead of GMAP
-
-    /*
-    genome_fasta
-        .map { meta, file -> [meta, file, file.size()] }
-    
-    ch_genome_index.mix(genome_fasta)
-    .groupTuple()
-    .set { sized_and_indexed_ch }
-
-    GMAP_L(
-        sized_and_indexed_ch.map { [ it[0], it[1], it[2] ]}, 
-        transcripts_fa
-    )
-
-    */
 
     GTF2BED_QUERY(
-        GMAP_L.out.map_file
+        GMAP.out.map_file
     )
 
     GTF2BED_REF(
