@@ -2,6 +2,7 @@
 process GMAP {
     tag "$meta.id"
     label 'process_medium'
+    cache = 'lenient'
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
@@ -9,7 +10,7 @@ process GMAP {
         'docker.io/mdiblbiocore/gmap:latest' }"
 
     input:
-    tuple val(meta), path(fasta), path(gmap_db)
+    tuple val(meta), path(gmap_db), path(fasta)
     tuple val(meta2), path(transcripts_fa)
 
 

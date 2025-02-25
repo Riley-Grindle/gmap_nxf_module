@@ -1,0 +1,37 @@
+nextflow_process {
+
+    name "Test Process AGAT_CONVERTSPGXF2GXF"
+    script "../main.nf"
+    process "AGAT_CONVERTSPGXF2GXF"
+
+    setup {
+        process {
+            """
+            input[0] = Channel.of( [ [ id: "TEST"], file(params.gtf, checkIfExists: true ) ]  )
+            """
+        }
+    }
+
+    test("AGAT - TEST - v0.0.1") {
+
+        when {
+            process {
+                """
+                input[0] = Channel.of( [ [ id: "TEST"], file(params.gtf, checkIfExists: true ) ]  )
+                """
+            }
+        }
+
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(
+                    process.out.output_gtf,
+                    process.out.versions
+                ).match()
+                }
+            )
+        }
+
+}
+}
