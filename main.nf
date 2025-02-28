@@ -3,7 +3,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { GMAP_GENOME} from './workflows/gmap.nf'
+include { GMAP_GENOME } from './workflows/gmap.nf'
 
 //
 // WORKFLOW: Run main nf-core/rnaseq analysis pipeline
