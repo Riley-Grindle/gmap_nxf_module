@@ -1,3 +1,17 @@
+#!/usr/bin/bash
+
+cat > params.json << EOF
+params {
+    genome_name = "UKY_AmexF1_1"
+    genome_fasta = "s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.fna.gz"
+    genome_gtf = "s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.FIXED.gtf"
+    gmap_index = "s3://mdibl-reference/a.mexicanum/internal/ukyGmapFiles/gmap_db/UKY_AmexF1_1/"
+    gmap_results = ""
+    tx_fasta = "s3://mdibl-reference/a.mexicanum/internal/ukyGmapFiles/txFasta/StringtieMerged/Merged_AmexT_AmexG6_stringtieFix_final.fa.gz"
+    tx_name = "Merged_AmexT_AmexG6_stringtieFix_final"
+    outdir = "s3://mdibl-rseaman/nextflowOutput/Merged_AmexT_AmexG6_stringtieFix_final_VS_UKY_AmexF1_1/"
+    publish_dir_mode = "copy"
+}
 process {
     withName: "GMAP_BUILD" {
         publishDir = [
@@ -36,9 +50,7 @@ process {
                     saveAs: { filename -> filename.equals('versions.yml') ? null : filename }
         ]
     }
-
 }
-
 profiles {
     debug {
         dumpHashes             = true
@@ -129,3 +141,4 @@ profiles {
         executor.memory        = 60.GB
     }
 }
+EOF
