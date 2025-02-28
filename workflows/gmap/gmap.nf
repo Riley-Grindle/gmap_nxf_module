@@ -8,13 +8,11 @@ include { BEDTOOLS_INTERSECT          } from '../../modules/nf-core/bedtools/mai
 include { GFFCOMPARE                  } from '../../modules/nf-core/gffcompare/main'
 
 workflow GMAP_GENOME {
-    take:
-    genome_fasta                //      channel: [meta, /path/to/genome.fasta]
-    genome_gtf                  //      file: [meta, /path/to/genome.gtf]
-    transcripts_fa              //      file: [meta, /path/to/transcripts.fasta]
 
 
-    main:
+    genome_fasta  = Channel.of( [ [id: params.genome_name], params.genome_fasta ] )
+    transcripts_fa = Channel.of( [ [id: params.tx_name], params.tx_fasta ] )
+    genome_gtf = Channel.of( [ [id: params.genome_name], params.genome_gtf ] )
     
     if (!params.gmap_index){
         
@@ -158,19 +156,4 @@ workflow GMAP_GENOME {
         GTF2BED_REF.out.bed_file
     )
 
-    emit:
-    map = BEDTOOLS_INTERSECT.out.intersect
-}
-
-
-workflow {
-    genome_fa_ch  = Channel.of( [ [id: params.genome_name], params.genome_fasta ] )
-    transcript_ch = Channel.of( [ [id: params.tx_name], params.tx_fasta ] )
-    genome_gtf_ch = Channel.of( [ [id: params.genome_name], params.genome_gtf ] )
-
-    GMAP_GENOME(
-        genome_fa_ch, 
-        genome_gtf_ch,
-        transcript_ch
-    )
 }
