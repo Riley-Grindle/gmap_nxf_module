@@ -18,7 +18,7 @@ process GFFCOMPARE {
     tuple val(meta), path("*.tmap")         , optional: true, emit: tmap
     tuple val(meta), path("*.refmap")       , optional: true, emit: refmap
     tuple val(meta), path("*.loci")         , emit: loci
-    tuple val(meta), path("*.stats")        , emit: stats
+    tuple val(meta), path("*.stats")        , emit: stats, optional: true
     tuple val(meta), path("*.tracking")     , emit: tracking
     path "versions.yml"                     , emit: versions
 

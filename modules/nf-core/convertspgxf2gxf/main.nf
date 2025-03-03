@@ -46,7 +46,7 @@ process AGAT_CONVERTSPGXF2GXF {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     touch ${prefix}.agat.gff
-    touch ${gff}.agat.log
+    touch ${gtf}.agat.log
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
