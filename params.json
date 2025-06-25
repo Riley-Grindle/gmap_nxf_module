@@ -1,0 +1,9 @@
+{
+    genome_name: "GCF_040938575.1_UKY_AmexF1",
+    genome_fasta: "s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.fna.gz",
+    genome_gtf: "s3://mdibl-reference/a.mexicanum/internal/GCF_040938575.1_UKY_AmexF1_1_genomic.FIXED.agat.gtf",
+    tx_fasta: "s3://mdibl-data/pmurawala/pmurawala_005.agilent_timecourse/gmap_microarray_probes_vs_GCF_040938575.1_UKY_AmexF1/AmexMA_v2.probes.fa",
+    tx_name: "pmurawala_005.agilent_timecourse.probes",
+    outdir: "s3://mdibl-data/pmurawala/pmurawala_005.agilent_timecourse/gmap_microarray_probes_vs_GCF_040938575.1_UKY_AmexF1/",
+    publish_dir_mode: "copy"
+}
