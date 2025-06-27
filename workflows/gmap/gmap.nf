@@ -29,7 +29,7 @@ workflow GMAP_GENOME {
             ch_genome_fasta
         )
 
-        ch_genome_index.index.mix(ch_genome_fasta)
+        ch_genome_index.index.concat(ch_genome_fasta)
         .groupTuple()
         .flatten()
         .collect()
@@ -93,7 +93,7 @@ workflow GMAP_GENOME {
 
         ch_genome_index = Channel.of( [ [id: params.genome_name], params.gmap_index ] )
 
-        ch_genome_index.mix(ch_genome_fasta)
+        ch_genome_index.concat(ch_genome_fasta)
         .groupTuple()
         .flatten()
         .collect()
